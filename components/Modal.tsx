@@ -77,7 +77,7 @@ function Modal() {
             muted={muted}
           />
 
-          <div className="absolute bottom-10 flex w-full items-center justify-between">
+          <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
             <div className="flex space-x-2">
               <button className="flex items-center gap-x-2 rounded bg-white px-8 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
                 <FaPlay className="h-7 w-7 text-black" />
@@ -91,15 +91,14 @@ function Modal() {
               <button className="modalButton">
                 <ThumbUpIcon className="h-7 w-7" />
               </button>
-
-              <button className="modalButton" onClick={() => setMuted(!muted)}>
-                {!muted ? (
-                  <VolumeUpIcon className="h-6 w-6" />
-                ) : (
-                  <VolumeOffIcon className="h-6 w-6" />
-                )}
-              </button>
             </div>
+            <button className="modalButton" onClick={() => setMuted(!muted)}>
+              {!muted ? (
+                <VolumeUpIcon className="h-6 w-6" />
+              ) : (
+                <VolumeOffIcon className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
 
