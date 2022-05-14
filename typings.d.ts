@@ -31,3 +31,8 @@ export interface Element {
     | 'Trailer'
     | 'Teaser'
 }
+
+export interface Genre {
+  id: number
+  name: string
+}
