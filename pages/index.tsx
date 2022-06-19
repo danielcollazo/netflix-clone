@@ -37,8 +37,12 @@ const Home = ({
   products,
 }: Props) => {
   const { loading, user } = useAuth()
-  const showModal = useRecoilValue(modalState)
   const subscription = useSubscription(user)
+  const showModal = useRecoilValue(modalState)
+
+  console.log('loading', loading)
+  console.log('user', user)
+  console.log('subscription', subscription)
 
   if (loading || subscription === null) return null
 
