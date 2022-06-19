@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import payments from '../lib/stripe'
 
 function useSubscription(user: User | null) {
-  const [subscription, setSubscription] = useState<Subscription | null>()
+  const [subscription, setSubscription] = useState<Subscription | null>(null)
 
   useEffect(() => {
     if (!user) return
