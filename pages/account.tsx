@@ -12,7 +12,6 @@ interface Props {
 }
 
 function Account({ products }: Props) {
-  console.log(products)
   const { user, logout } = useAuth()
   const subscription = useSubscription(user)
   return (
