@@ -1,6 +1,6 @@
 import { DocumentData } from 'firebase/firestore'
 import Image from 'next/image'
-import { useRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 import { modalState, movieState } from '../atoms/modalAtoms'
 import { Movie } from '../typings'
 
@@ -9,8 +9,8 @@ interface Props {
 }
 
 function Thumbnail({ movie }: Props) {
-  const [_showModal, setShowModal] = useRecoilState(modalState)
-  const [_currentMovie, setCurrentMovie] = useRecoilState(movieState)
+  const setShowModal = useSetRecoilState(modalState)
+  const setCurrentMovie = useSetRecoilState(movieState)
   return (
     <div
       className={`relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105`}

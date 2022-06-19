@@ -90,7 +90,7 @@ function Modal() {
         (snapshot) => setMovies(snapshot.docs)
       )
     }
-  }, [movie?.id, db])
+  }, [user, movie?.id])
 
   // Check if the movie is already in users list
   useEffect(() => {
@@ -101,7 +101,7 @@ function Modal() {
   const handleList = async () => {
     if (addedToList) {
       await deleteDoc(
-        doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!)
+        doc(db, 'customers', user!.uid, 'myList', movie?.id.toString())
       )
       toast(
         `${movie?.title || movie?.original_name} has been removed from My List`,
@@ -112,7 +112,7 @@ function Modal() {
       )
     } else {
       await setDoc(
-        doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!),
+        doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()),
         { ...movie }
       )
       toast(
