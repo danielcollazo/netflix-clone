@@ -25,6 +25,18 @@ import useAuth from '../hooks/useAuth'
 import { db } from '../firebase'
 import toast, { Toaster } from 'react-hot-toast'
 
+const toastStyle = {
+  background: 'white',
+  color: 'black',
+  fontWeight: 'bold',
+  fontSize: '16px',
+  padding: '15px',
+  borderRadius: '9999px',
+  maxWidth: '1000px',
+}
+
+const toastDuration = 8000
+
 function Modal() {
   const [showModal, setShowModal] = useRecoilState(modalState)
   const [movie, setMovie] = useRecoilState(movieState)
@@ -94,7 +106,8 @@ function Modal() {
       toast(
         `${movie?.title || movie?.original_name} has been removed from My List`,
         {
-          duration: 8000,
+          duration: toastDuration,
+          style: toastStyle,
         }
       )
     } else {
@@ -105,7 +118,8 @@ function Modal() {
       toast(
         `${movie?.title || movie?.original_name} has been added to My List`,
         {
-          duration: 8000,
+          duration: toastDuration,
+          style: toastStyle,
         }
       )
     }
