@@ -21,7 +21,6 @@ function Plans({ products }: Props) {
   const subscribeToPlan = () => {
     if (!user) return
 
-    console.log(selectedPlan)
     loadCheckout(selectedPlan?.prices[0].id!)
     setIsBillingLoading(true)
   }
